@@ -25,7 +25,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
                         <Avatar src={props.postSummary.editor.avatarUrls.small} />
                         <EditorDescription>
                             <EditorName>{props.postSummary.editor.name}</EditorName>
-                            <PostDate>ha 3 dias</PostDate>
+                            <PostDate>todo: ha 3 dias</PostDate>
                         </EditorDescription>
                     </Editor>
                     <Title>{props.postSummary.title}</Title>
@@ -83,6 +83,10 @@ const Tags = styled.ul`
   list-style: none;
   display: flex;
   gap: 8px;
+
+  @media screen and (max-width: 767px ){
+    display: none;
+  }
 `;
 
 const Tag = styled.li`
