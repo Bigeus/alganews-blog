@@ -14,7 +14,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
     return (
         <Link legacyBehavior passHref href={`/posts/${id}/${slug}`}>
             <Wrapper>
-                <BgImage bg={props.postSummary.imageUrls.medium} />
+                <BgImage $bg={props.postSummary.imageUrls.medium} />
                 <Content>
                     <Tags>
                         {props.postSummary.tags.map((tag) => (
@@ -44,8 +44,8 @@ const Content = styled.div`
   justify-content: center;
 `;
 
-const BgImage = styled.div<{ bg: string }>`
-  background-image: url(${(p) => p.bg});
+const BgImage = styled.div<{ $bg: string }>`
+  background-image: url(${(p) => p.$bg});
   position: absolute;
   inset: 0;
   background-color: blue;
