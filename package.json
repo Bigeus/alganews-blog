@@ -15,12 +15,14 @@
     "polished": "^4.3.1",
     "react": "^18.2.0",
     "react-dom": "^18",
+    "react-paginate": "^8.2.0",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-paginate": "^7.1.4",
     "babel-plugin-styled-components": "^2.1.4",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",

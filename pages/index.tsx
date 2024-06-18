@@ -6,6 +6,8 @@ import sendToHomePage from "@/core/utils/sendToHomePage";
 import PostCard from "@/components/PostCard";
 import PostsGrid from "@/components/PostsGrid";
 import PageGrid from "@/components/PageGrid";
+import ReactPaginate from "react-paginate";
+import Router from "next/router";
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   { query, res }
@@ -53,8 +55,20 @@ export default function Home(props: HomeProps) {
           posts.content?.slice(1).map(post => {
             return <PostCard key={post.id} post={post} />
           })
-        } 
+        }
       </PostsGrid>
+      <ReactPaginate
+        containerClassName={"Pagination"}
+        pageCount={posts.totalPages || 0}
+        marginPagesDisplayed={0}
+        pageRangeDisplayed={3}
+        previousLabel={"<"}
+        nextLabel={">"}
+        hrefBuilder={page => `/?page=${page}`}
+        onPageChange={page => {
+          Router.push(`/?page=${page.selected + 1}`)
+        }}
+      />
     </PageGrid>
   );
 }
