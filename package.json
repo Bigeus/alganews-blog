@@ -13,6 +13,7 @@
     "bigeus-sdk": "^2.7.0",
     "danielbonifacio-sdk-2": "^2.7.1",
     "date-fns": "^3.6.0",
+    "disqus-react": "^1.1.5",
     "next": "^14.2.4",
     "polished": "^4.3.1",
     "react": "^18.2.0",

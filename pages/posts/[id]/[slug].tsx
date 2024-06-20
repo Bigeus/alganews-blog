@@ -5,6 +5,8 @@ import { ResourceNotFoundError } from "danielbonifacio-sdk-2/dist/errors";
 import Head from "next/head";
 import PostHeader from "../../../components/PostHeader";
 import Markdown from "../../../components/Markdown";
+import { DiscussionEmbed } from "disqus-react";
+import { url } from "inspector";
 
 interface PostProps extends NextPageProps {
     post?: Post.Detailed;
@@ -37,6 +39,15 @@ export default function PostPage(props: PostProps) {
                         title={post?.title}
                     />
                     <Markdown>{post.body}</Markdown>
+                    <DiscussionEmbed
+                        shortname="alganews-18"
+                        config={{
+                            url: `http://${props.host}/posts/${props.post?.id}/${props.post?.slug}`,
+                            identifier: String(props.post?.id),
+                            title: props.post?.title,
+                            language: "pt_BR"
+                        }}
+                    />
                 </>
             )}
         </>
