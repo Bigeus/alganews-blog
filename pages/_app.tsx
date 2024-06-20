@@ -8,7 +8,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Content from "../components/Content";
 
-interface CustomAppProps extends NextPageProps {}
+interface CustomAppProps extends NextPageProps { }
 
 type AppProps<P = any> = {
   pageProps: P;
@@ -17,10 +17,7 @@ type AppProps<P = any> = {
 function MyApp({ Component, pageProps }: AppProps<CustomAppProps>) {
   if (pageProps.error) {
     return (
-      <Error
-        statusCode={pageProps.error.statusCode}
-        title={pageProps.error.message}
-      />
+      <Error statusCode={pageProps.error.statusCode} title={pageProps.error.message} />
     );
   }
   return (
