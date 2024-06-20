@@ -1,4 +1,5 @@
-import { Post } from "bigeus-sdk";
+import formatPostDate from "@/core/utils/formatPostDate";
+import { Post } from "danielbonifacio-sdk-2";
 import Image from "next/image";
 import Link from "next/link";
 import { transparentize } from "polished";
@@ -18,7 +19,7 @@ export default function PostCard(props: PostCardProps) {
                 <Editor>
                     <EditorImage alt="editorImage" src={post.editor.avatarUrls.small} width={64} height={64} />
                 </Editor>
-                <PublishDate>a 3 dias</PublishDate>
+                <PublishDate>{formatPostDate(props.post.createdAt)}</PublishDate>
                 <Title>{props.post.title}</Title>
             </Info>
         </Wrapper>

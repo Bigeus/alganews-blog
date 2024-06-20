@@ -7,8 +7,6 @@ import GlobalStyles from "../styles/GlobalStyles";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Content from "../components/Content";
-import Page2 from "../app/not-found";
-import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 
 interface CustomAppProps extends NextPageProps {}
 
@@ -20,8 +18,8 @@ function MyApp({ Component, pageProps }: AppProps<CustomAppProps>) {
   if (pageProps.error) {
     return (
       <Error
-      statusCode={pageProps.error.statusCode}
-      errorComponent={Page2}
+        statusCode={pageProps.error.statusCode}
+        title={pageProps.error.message}
       />
     );
   }

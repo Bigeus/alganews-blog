@@ -1,6 +1,6 @@
 import Head from "next/head";
 import FeaturedPost from "@/components/FeaturedPost";
-import { Post, PostService } from "bigeus-sdk";
+import { Post, PostService } from "danielbonifacio-sdk-2";
 import { GetServerSideProps } from "next";
 import sendToHomePage from "@/core/utils/sendToHomePage";
 import PostCard from "@/components/PostCard";
