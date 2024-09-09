@@ -7,12 +7,21 @@ import GlobalStyles from "../styles/GlobalStyles";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Content from "../components/Content";
+import ProgressBar from "@badrap/bar-of-progress";
+import { Router } from "next/router";
+import "../httpConfig";
 
 interface CustomAppProps extends NextPageProps { }
 
 type AppProps<P = any> = {
   pageProps: P;
 } & Omit<NextAppProps<P>, "pageProps">;
+
+const progress = new ProgressBar({
+  size: 2,
+  color: light.primaryBackground,
+  delay: 100,
+})
 
 function MyApp({ Component, pageProps }: AppProps<CustomAppProps>) {
   if (pageProps.error) {
@@ -31,4 +40,9 @@ function MyApp({ Component, pageProps }: AppProps<CustomAppProps>) {
     </ThemeProvider>
   );
 }
+
+Router.events.on('routeChangeStart', progress.start)
+Router.events.on('routeChangeComplete', progress.finish)
+Router.events.on('routeChangeError', progress.finish)
+
 export default MyApp;

@@ -6,7 +6,7 @@ export default function NavBar() {
     <nav>
       <Wrapper>
         <li>
-          <Link legacyBehavior href="/?page=1">
+          <Link legacyBehavior href="/">
             Home
           </Link>
         </li>
